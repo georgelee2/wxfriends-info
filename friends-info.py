@@ -10,15 +10,12 @@ itchat.auto_login(enableCmdQR=True)
 
 friends = itchat.get_friends(update=True)[0:]
 
-num = 0
-table.write(0,0,'Sex')
-table.write(0,1,'Province')
-table.write(0,2,'City')
-table.write(0,3,'NickName')
-table.write(0,4,'Alias')
-table.write(0,5,'RemarkName')
-table.write(0,6,'Signature')
+labels = ['Sex', 'Province', 'City', 'NickName', 'Alias', 'RemarkName', 'Signature']
+for i, j in enumerate(labels):
+	str_exp = 'table.write(0,i,j)'
+	exec(str_exp)
 
+num = 0
 for i in friends:
 	user = friends[num]
 	num = num + 1
